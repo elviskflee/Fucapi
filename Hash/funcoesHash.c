@@ -178,7 +178,7 @@ void listar(hash **raiz, int conjunto){
 
 void ordem(hash **raiz, int conjunto){
 	listaEnc *aux;
-	int i, v[50], j= 0;
+	int i, v[50], j= 0, temp, min;
 	
 	for(i=0; i<50; i++)
 		v[i]= 0;
@@ -197,36 +197,25 @@ void ordem(hash **raiz, int conjunto){
 	}
 	printf("\nOrdem do conjunto %d: ", conjunto);
 	
-	quicksort(v,(sizeof v / sizeof v[0]));
-	i= 0;
-	while(v[i] ==0);
-	if(v[i]!= 0)
-		printf("%d", v[i]);
-	for(i++; i<49; i++)
-		if(v[i]!= 0)
-			printf(", %d", v[i]);
-
-}
-
-void quicksort(int *vetor, int tam){
-	if (tam < 2) return;
- 
-	int pivot = vetor[tam / 2];
-
-	int i, j;
-	for (i = 0, j = tam - 1; ; i++, j--)
-	{
-	while (vetor[i] < pivot) i++;
-	while (vetor[j] > pivot) j--;
-
-	if (i >= j) break;
-
-	int temp = vetor[i];
-	vetor[i]     = vetor[j];
-	vetor[j]     = temp;
+	for(i=0; i<50; i++){
+		min= i;
+		for(j=i; j<50; j++)
+			if(v[min]>v[j])
+				min = j;
+		temp = v[i];
+		v[i] = v[min];
+		v[min] = temp;
+	
 	}
 
-	quicksort(vetor, i);
-	quicksort(vetor + i, tam - i);
+
+
+	i= 0;
+	while(v[i] ==0)
+		i++;
+	if(v[i]!= 0)
+		printf("%d", v[i]);
+	for(i++; i<50; i++)
+		printf(", %d", v[i]);
 
 }
