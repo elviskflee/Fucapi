@@ -3,6 +3,13 @@
 #include <math.h>
 #include <time.h>
 
+#ifdef WINDOWS						//definicoes para limpar tela
+	#define CLR system("cls");
+#else
+	// Assume POSIX
+	#define CLR system ("clear");
+#endif
+
 #define MAXCHAVES 50
 
 typedef struct ListaEnc{
@@ -27,7 +34,7 @@ int criar(hash **raiz, int *contaCJ, int *atualCJ);
  * Insere a chave de entrada no conjunto especificado;
  * Chave repetida: ignora, retorna "- posicao da chave na tabela";
  * Sucesso: insere, retorna "+ posicao da chave na tabela";
- * Erro: Conjunto nao existe, retorna -1.
+ * Erro: Conjunto nao existe, retorna -50.
  */
 int inserir(hash **raiz, int valor, int conjunto);
 
@@ -73,5 +80,3 @@ void listar(hash **raiz, int conjunto);
  * Por ordem crescente, separados por virgula e em uma unica linha.
  */
  void ordem(hash **raiz, int conjunto);
- 
- void quicksort(int *vetor, int tam);
