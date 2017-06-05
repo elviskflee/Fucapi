@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=GNA
+ProjectName            :=Hash
 ConfigurationName      :=Debug
-WorkspacePath          :=/home/lee/Fucapi/GNA
-ProjectPath            :=/home/lee/Fucapi/GNA
+WorkspacePath          :=/home/lee/Fucapi/Hash
+ProjectPath            :=/home/lee/Fucapi/Hash
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=lee
-Date                   :=04/06/17
+Date                   :=05/06/17
 CodeLitePath           :=/home/lee/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="GNA.txt"
+ObjectsFileList        :="Hash.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/funcoesHash.c$(ObjectSuffix) 
 
 
 
@@ -92,12 +92,20 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/lee/Fucapi/GNA/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/lee/Fucapi/Hash/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(DependSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
 
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
+
+$(IntermediateDirectory)/funcoesHash.c$(ObjectSuffix): funcoesHash.c $(IntermediateDirectory)/funcoesHash.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/lee/Fucapi/Hash/funcoesHash.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/funcoesHash.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/funcoesHash.c$(DependSuffix): funcoesHash.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/funcoesHash.c$(ObjectSuffix) -MF$(IntermediateDirectory)/funcoesHash.c$(DependSuffix) -MM funcoesHash.c
+
+$(IntermediateDirectory)/funcoesHash.c$(PreprocessSuffix): funcoesHash.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/funcoesHash.c$(PreprocessSuffix) funcoesHash.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
