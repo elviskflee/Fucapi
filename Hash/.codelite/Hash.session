@@ -5,22 +5,22 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/lee/Fucapi/Hash/main.c" Name="FileName"/>
-      <int Value="151" Name="FirstVisibleLine"/>
-      <int Value="86" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="3" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/lee/Fucapi/Hash/bibliotecaHash.h" Name="FileName"/>
-      <int Value="45" Name="FirstVisibleLine"/>
-      <int Value="43" Name="CurrentLine"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="4" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/lee/Fucapi/Hash/funcoesHash.c" Name="FileName"/>
-      <int Value="73" Name="FirstVisibleLine"/>
-      <int Value="92" Name="CurrentLine"/>
+      <int Value="241" Name="FirstVisibleLine"/>
+      <int Value="189" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
